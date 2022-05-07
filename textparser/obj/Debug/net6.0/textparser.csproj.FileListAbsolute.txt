@@ -1,0 +1,15 @@
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/bin/Debug/net6.0/textparser
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/bin/Debug/net6.0/textparser.deps.json
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/bin/Debug/net6.0/textparser.runtimeconfig.json
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/bin/Debug/net6.0/textparser.dll
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/bin/Debug/net6.0/textparser.pdb
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/obj/Debug/net6.0/textparser.csproj.AssemblyReference.cache
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/obj/Debug/net6.0/textparser.GeneratedMSBuildEditorConfig.editorconfig
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/obj/Debug/net6.0/textparser.AssemblyInfoInputs.cache
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/obj/Debug/net6.0/textparser.AssemblyInfo.cs
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/obj/Debug/net6.0/textparser.csproj.CoreCompileInputs.cache
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/obj/Debug/net6.0/textparser.dll
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/obj/Debug/net6.0/refint/textparser.dll
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/obj/Debug/net6.0/textparser.pdb
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/obj/Debug/net6.0/textparser.genruntimeconfig.cache
+/home/kevan/Documents/Projects/C#/WTW-code-test/textparser/obj/Debug/net6.0/ref/textparser.dll
