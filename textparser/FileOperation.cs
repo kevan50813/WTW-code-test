@@ -6,11 +6,19 @@ public class FileOperation
 {
     public bool doseFileExsit(string fileName)
     {
-        return File.Exists(fileName);
+        return File.Exists(fileName); 
     }
 
     public string[] readFile(string fileName)
     {
-       return File.ReadAllLines(fileName);
+        try
+        {
+            return File.ReadAllLines(fileName);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Could not read file into list");
+            throw;
+        }
     }
 }

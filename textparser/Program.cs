@@ -1,7 +1,6 @@
-﻿using System;
+﻿using DataTriangle;
 
-
-namespace DataTriangle
+namespace textparser
 {
     class mainclass
     {
