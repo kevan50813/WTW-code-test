@@ -10,6 +10,7 @@
     <list default="true" id="0033a75d-935f-4eb4-ad19-3aa5186ef166" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.textparser/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.textparser/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileOperation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FileOperation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Output.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parser.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
@@ -17,6 +18,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f3a5d3444c2b44c9b02fc069b8b27c879ec400/ef/d829d3ab/String.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -30,19 +34,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.environmentSetup",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.environmentSetup&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="textparser" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -72,6 +76,8 @@
       <option name="presentableId" value="Default" />
       <updated>1651921676843</updated>
       <workItem from="1651921684092" duration="2272000" />
+      <workItem from="1652001946430" duration="655000" />
+      <workItem from="1651999961366" duration="2866000" />
     </task>
     <servers />
   </component>

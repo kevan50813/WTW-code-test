@@ -21,4 +21,9 @@ public class FileOperation
             throw;
         }
     }
+
+    public void writeToFile()
+    {
+        //TODO
+    }
 }

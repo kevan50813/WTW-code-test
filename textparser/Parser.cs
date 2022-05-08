@@ -12,5 +12,9 @@ public class Parser
         get; 
         set;
     }
-    
+
+    public List<IncrementalValues> ParseInput(string[] input)
+    {
+        
+    }
 }
