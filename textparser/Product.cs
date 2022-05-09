@@ -1,5 +1,6 @@
 namespace textparser;
 
+//Class that reperesnts the prodccus thats in the text file
 public class Product
 {
     public int OriginYear
@@ -20,7 +21,7 @@ public class Product
         set;
     }
 
-    public Enumerable<ProductIndex>
+    public IEnumerable<IncrementalValues> IncrementalValues
     {
         get;
         set;
