@@ -18,14 +18,68 @@ public class Parser
         set;
     }
 
-    public List<IncrementalValues> ParseInput(string[] input)
+    public List<IncrementalValues> ParseInput(IList<string> input)
     {
-        throw new NotImplementedException();
+        var headings = splitRow(input.ElementAt(headingIndex)).Select(x => x.ToLowerInvariant()).ToList();
+        List<IncrementalValues> parsedValues = new List<IncrementalValues>();
+        Columns columnIndexes = createColumnIndex(headings);
+        if (columnIndexes.ProductIndex == -1 || columnIndexes.OriginYearIndex == -1 ||
+            columnIndexes.DevYearIndex == -1 || columnIndexes.IncValIndex == -1)
+        {
+            return new List<IncrementalValues>();
+        }
+
+        foreach (string i in input.Skip(1))
+        {
+            IncrementalValues value = createIncrementalValues(i, headings.Count, columnIndexes);
+            parsedValues.Add(value);
+        }
+
+        return parsedValues;
     }
 
-    private IncrementalValues createIncrementalValues(string row, int rowVlaues, Columns colIndex)
+    private IncrementalValues createIncrementalValues(string row, int numRowValues, Columns colIndex)
     {
-        throw new NotImplementedException();
+        List<string> rowValues = splitRow(row);
+        string name = rowValues[colIndex.ProductIndex];
+        int originYear = 0;
+        int devYear = 0;
+        double incremntalValue = 0;
+        if (rowValues.Count != numRowValues)
+        {
+            invalidRows.Add(row);
+        }
+
+        else if (!int.TryParse(rowValues[colIndex.OriginYearIndex], out originYear))
+        {
+            invalidRows.Add(row);
+            return null;
+        }
+        else if (!int.TryParse(rowValues[colIndex.DevYearIndex], out devYear))
+        {
+            invalidRows.Add(row);
+            return null;
+        }
+        else if (!double.TryParse(rowValues[colIndex.IncValIndex], out incremntalValue))
+        {
+            invalidRows.Add(row);
+            return null;
+        }
+
+        else if (!validateParamiters(name, originYear, devYear))
+        {
+            invalidRows.Add(row);
+            return null;
+        }
+        var incValues = new IncrementalValues
+        {
+            pName = name,
+            originYear= originYear,
+            developmentYear= devYear,
+            incremntalValue = incremntalValue
+        };
+        return incValues;
+        
     }
 
     private Columns createColumnIndex(List<string> headings)
@@ -46,6 +100,16 @@ public class Parser
 
     private bool validateParamiters(string name,int originYear,int devYear)
     {
-        throw new NotImplementedException();
+        if (string.IsNullOrEmpty(name))
+        {
+            return false;
+        }
+
+        if (originYear <= minimumYear || originYear > DateTime.Now.Year)
+        {
+            return false;
+        }
+
+        return devYear <= DateTime.Now.Year && devYear >= originYear;
     }
 }

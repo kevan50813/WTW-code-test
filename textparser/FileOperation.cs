@@ -4,16 +4,15 @@ using System.IO;
 using System.Collections.Generic;
 public class FileOperation
 {
-    public bool doseFileExsit(string fileName)
+    public bool doseFileExsit(string filename)
     {
-        return File.Exists(fileName); 
+        return File.Exists(filename); 
     }
-
-    public string[] readFile(string fileName)
+    public IList<string> readFile(string filename)
     {
         try
         {
-            return File.ReadAllLines(fileName);
+            return File.ReadAllLines(filename);
         }
         catch (Exception e)
         {
@@ -22,8 +21,22 @@ public class FileOperation
         }
     }
 
-    public void writeToFile()
+    public bool writeToFile(string filename,IEnumerable<string> contents)
     {
-        //TODO
+        try
+        {
+            if (string.IsNullOrEmpty(filename))
+            {
+                return false;
+            }
+            File.WriteAllLines(filename, contents);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Could not write to file ", filename);
+            throw;
+        }
+
+        return true;
     }
 }

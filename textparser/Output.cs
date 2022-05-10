@@ -2,7 +2,12 @@ namespace textparser;
 
 public class Output
 {
-    private DataTriangle dt;
+    private DataCalculator dc;
+
+    public Output(DataCalculator dc)
+    {
+        this.dc = dc;
+    }
     public List<string> CreateOutputContent(List<IncrementalValues> iv)
     {
         //calculate the origin year and devleopmt years
@@ -16,20 +21,22 @@ public class Output
         var products = getProducts(iv, originYear, developmentYears);
         foreach (Product product in products)
         {
-            outputList.Add(string.Format("{0},{1}"),product.ProductName,string.Join(",",DataTriangle.Calculate(product)));
+            outputList.Add(string.Format("{0},{1}"),product.ProductName,string.Join(",",dc.Calculate(product)));
         }
+
+        return outputList;
 
     }
 
-    private IEnumerable<string> getProducts(List<IncrementalValues> iv, int originYear, int developmentYears)
+    private IEnumerable<Product> getProducts(List<IncrementalValues> iv, int originYear, int developmentYears)
     {
         IEnumerable<string> productNames = iv.Select(x => x.pName.ToLowerInvariant()).Distinct();
-        return productNames.Select(productNames=>new Product()
+        return productNames.Select(pName=>new Product()
         {
-            PName=pName,
+            ProductName= pName,
             OriginYear = originYear,
             DevYears = developmentYears,
-            incremetalValues=iv.Where(x=>string.Compare(x.pName,PName,StringComparison.OrdinalIgnoreCase)==0)
+            IncrementalValues = iv.Where(x=>string.Compare(x.pName,pName,StringComparison.OrdinalIgnoreCase)==0)
         });
     }
 }

@@ -4,40 +4,39 @@ namespace textparser;
 
 public class DataTriangle
 {
-    public Output o;
-    public FileOperation fo;
-    public Parser p;
-    
+    private string InvalidValues = "INVALID VALUE";
+    private Output output;
+    private FileOperation fileoperator;
+    private Parser parser;
+
     public DataTriangle(FileOperation fo, Parser p, Output o)
     {
-        this.fo = fo;
-        this.p = p;
-        this.o = o;
+        output = o;
+        parser = p;
+        fileoperator = fo;
     }
 
     public bool convertDataTriangle(string filename)
     {
-        string[] input = fo.readFile(filename);
-        List<IncrementalValues> iv = p.ParseInput(input);
-        List<string> output = o.CreateOutputContent(iv);
-        //TODO
+        IList<string> input = fileoperator.readFile(filename);
+        List<IncrementalValues> parsedValues = parser.ParseInput(input);
+        IList<string> outputContent = output.CreateOutputContent(parsedValues);
+
         try
         {
-            fo.writeToFile();
+            fileoperator.writeToFile(filename,outputContent);
+            if (parser.invalidRows.Any())
+            {
+                return false;
+            }
         }
         catch (Exception e)
-        {
-            Console.WriteLine("An error occured");
-            return false;
-        }
-        
-        if(p.invalidRows.Any())
         {
             return false;
         }
 
         return true;
+
     }
-
-
+    
 }
