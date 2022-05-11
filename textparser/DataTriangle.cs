@@ -16,7 +16,7 @@ public class DataTriangle
         fileoperator = fo;
     }
 
-    public bool convertDataTriangle(string filename)
+    public bool convertDataTriangle(string? filename)
     {
         IList<string> input = fileoperator.readFile(filename);
         List<IncrementalValues> parsedValues = parser.ParseInput(input);
@@ -24,7 +24,9 @@ public class DataTriangle
 
         try
         {
-            fileoperator.writeToFile(filename,outputContent);
+            string path = filename.Substring(0, filename.LastIndexOf('/'));
+            string outfile = path + "/Output.txt";
+            fileoperator.writeToFile(outfile,outputContent);
             if (parser.invalidRows.Any())
             {
                 return false;
@@ -32,6 +34,7 @@ public class DataTriangle
         }
         catch (Exception e)
         {
+            Console.WriteLine("Could not Covert triangle");
             return false;
         }
 

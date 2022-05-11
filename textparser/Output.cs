@@ -21,7 +21,7 @@ public class Output
         var products = getProducts(iv, originYear, developmentYears);
         foreach (Product product in products)
         {
-            outputList.Add(string.Format("{0},{1}"),product.ProductName,string.Join(",",dc.Calculate(product)));
+            outputList.Add(string.Format("{0},{1}",product.OriginYear,product.DevYears));
         }
 
         return outputList;

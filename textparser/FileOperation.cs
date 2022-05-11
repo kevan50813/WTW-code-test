@@ -4,11 +4,11 @@ using System.IO;
 using System.Collections.Generic;
 public class FileOperation
 {
-    public bool doseFileExsit(string filename)
+    public bool doseFileExsit(string? filename)
     {
         return File.Exists(filename); 
     }
-    public IList<string> readFile(string filename)
+    public IList<string> readFile(string? filename)
     {
         try
         {
@@ -16,7 +16,7 @@ public class FileOperation
         }
         catch (Exception e)
         {
-            Console.WriteLine("Could not read file into list");
+            Console.WriteLine("Could not read file into list: ",e);
             throw;
         }
     }
@@ -34,6 +34,7 @@ public class FileOperation
         catch (Exception e)
         {
             Console.WriteLine("Could not write to file ", filename);
+            Console.WriteLine(e);
             throw;
         }
 
